@@ -6,7 +6,7 @@ const api = axios.create({
 
 // eslint-disable-next-line import/prefer-default-export
 export const stores = {
-  getStores: ({ latitude, longitude, radius }) =>
+  getStores: (latitude, longitude, radius) =>
     // eslint-disable-next-line implicit-arrow-linebreak
     api.get(`json?lat=${latitude}&lng=${longitude}&m=${radius}`),
 };
