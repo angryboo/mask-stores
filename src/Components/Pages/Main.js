@@ -1,20 +1,15 @@
 /* eslint-disable react/button-has-type */
-import React, { useContext } from 'react';
+import React from 'react';
 import './Main.css';
 import Map from '../Templates/Maps/Map';
-import { MapContext } from '../../ContextAPI/MapContext';
+import Test from '../Templates/Test/Test'; // 테스트용 컴포넌트(삭제예정)
+// import { MapContext } from '../../ContextAPI/MapContext';
 
 function Main() {
-  const { state } = useContext(MapContext);
+  // const { state } = useContext(MapContext);
   return (
     <main className="Main">
-      <button
-        onClick={() => {
-          console.log(state);
-        }}
-      >
-        현재 mapState 보기
-      </button>
+      <Test />
       <Map />
     </main>
   );

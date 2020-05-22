@@ -1,9 +1,11 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './Map.css';
 import { MapContext } from '../../../ContextAPI/MapContext';
+import Overlay from './Overlay';
 
 function Map() {
   const { state, getStores, getLocation } = useContext(MapContext);
+  const [_map, setState] = useState({});
   const { kakao } = window;
 
   useEffect(() => {
@@ -21,9 +23,15 @@ function Map() {
       getLocation(Ha, Ga); // 위도, 경도 상태 변경
       getStores(Ha, Ga, state.radius); // 마스크 판매처 List 상태 변경
     });
+    setState({ map });
   }, []);
 
-  return <div id="map" />;
+  return (
+    <>
+      <Overlay map={_map.map} />
+      <div id="map" />
+    </>
+  );
 }
 
 export default Map;

@@ -41,12 +41,19 @@ const useMapFetch = () => {
     });
   };
 
+  const getRange = (radius) => {
+    dispatch({
+      type: 'RADIUS',
+      radius,
+    });
+  };
+
   // 마운트 시점에 초기 위치 마스크 판매처 취득
   useEffect(() => {
     getStores(state.latitude, state.longitude, state.radius);
   }, []);
 
-  return [state, getStores, getLocation];
+  return [state, getStores, getLocation, getRange];
 };
 
 export default useMapFetch;
