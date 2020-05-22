@@ -1,18 +1,13 @@
-import { useReducer, useEffect, useCallback } from 'react';
+import { useReducer, useEffect } from 'react';
 import { initialState, mapReducer } from '../Reducer/MapReducer';
 import { stores } from '../API/StoresAPI';
 
-const useMap = () => {
+const useMapFetch = () => {
   const [state, dispatch] = useReducer(mapReducer, initialState);
-
-  const getStores = useCallback(async () => {
+  const getStores = async (lat, lon, rad) => {
     dispatch({ type: 'LOADING' });
     try {
-      const storeData = await stores.getStores(
-        state.latitude,
-        state.longitude,
-        state.radius,
-      );
+      const storeData = await stores.getStores(lat, lon, rad);
       if (storeData.status === 200) {
         dispatch({
           type: 'STORE',
@@ -36,15 +31,22 @@ const useMap = () => {
         },
       });
     }
-  }, []);
+  };
 
-  // const getAera = useCallback();
+  const getLocation = (latitude, longitude) => {
+    dispatch({
+      type: 'MOVE',
+      latitude,
+      longitude,
+    });
+  };
 
+  // 마운트 시점에 초기 위치 마스크 판매처 취득
   useEffect(() => {
-    getStores();
+    getStores(state.latitude, state.longitude, state.radius);
   }, []);
 
-  return [state, getStores];
+  return [state, getStores, getLocation];
 };
 
-export default useMap;
+export default useMapFetch;

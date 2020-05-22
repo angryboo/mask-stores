@@ -1,11 +1,14 @@
 import React from 'react';
 import './App.css';
 import Main from './Components/Pages/Main';
+import { MapProvider } from './ContextAPI/MapContext';
 
 function App() {
   return (
     <div className="App">
-      <Main />
+      <MapProvider>
+        <Main />
+      </MapProvider>
     </div>
   );
 }
