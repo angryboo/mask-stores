@@ -2,6 +2,7 @@
 
 /* eslint-disable react/button-has-type */
 import React, { useContext } from 'react';
+
 import { MapContext } from '../../../ContextAPI/MapContext';
 import './Test.css';
 
@@ -27,20 +28,21 @@ function Main() {
       </button>
       <button
         onClick={() => {
-          getRange(300);
-          getStores(state.latitude, state.longitude, 300);
+          getRange(700);
+          getStores(state.latitude, state.longitude, 700);
         }}
       >
-        범위 300m 변경
+        범위 7000m 변경
       </button>
       <button
         onClick={() => {
-          getRange(200);
-          getStores(state.latitude, state.longitude, 200);
+          getRange(1000);
+          getStores(state.latitude, state.longitude, 1000);
         }}
       >
-        범위 200m 변경
+        범위 1000m 변경
       </button>
+      <button onClick={() => {}}>getNews</button>
     </div>
   );
 }

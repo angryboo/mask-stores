@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import './Map.css';
 import { MapContext } from '../../../ContextAPI/MapContext';
 import Overlay from './Overlay';
+import Marker from './Marker';
 
 function Map() {
   const { state, getStores, getLocation } = useContext(MapContext);
@@ -13,7 +14,7 @@ function Map() {
     const container = document.getElementById('map');
     const options = {
       center: new kakao.maps.LatLng(37.544579, 127.056045),
-      level: 3,
+      level: 5,
     };
     const map = new kakao.maps.Map(container, options);
 
@@ -28,6 +29,7 @@ function Map() {
 
   return (
     <>
+      <Marker map={_map.map} />
       <Overlay map={_map.map} />
       <div id="map" />
     </>
