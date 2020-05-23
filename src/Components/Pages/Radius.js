@@ -1,14 +1,8 @@
 import React from 'react';
 import './Main.css';
-import MaskList from '../Templates/Maps/MaskList';
 
-function MainContents() {
-  // const { state } = useContext(MapContext);
-  return (
-    <div className="MainContents">
-      <MaskList />
-    </div>
-  );
+function Radius() {
+  return <div className="Radius">검색할 반경을 클릭해주세요.</div>;
 }
 
-export default MainContents;
+export default Radius;
