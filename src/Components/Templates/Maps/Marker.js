@@ -13,12 +13,29 @@ function Marker({ map }) {
     }));
 
     const markers = [];
+
     const generateMaker = (mapObj) => {
+      const imageSrc =
+        'https://t1.daumcdn.net/localimg/localimages/07/2012/img/marker_p.png';
+
+      const imageSize = new kakao.maps.Size(64, 69);
+
+      const imageOption = { offset: new kakao.maps.Point(27, 69) };
+
+      const markerImage = new kakao.maps.MarkerImage(
+        imageSrc,
+        imageSize,
+        imageOption,
+      );
+
       markersPosition.forEach((store) => {
         const marker = new kakao.maps.Marker({
           title: store.title,
           position: store.latlng,
+          image: markerImage,
         });
+
+        // console.log(marker);
         marker.setMap(mapObj);
         markers.push(marker);
       });

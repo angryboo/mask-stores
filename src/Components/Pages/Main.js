@@ -11,8 +11,8 @@ function Main() {
   return (
     <main className="Main">
       <Test />
-      <MainContents />
       <Map />
+      <MainContents />
     </main>
   );
 }
