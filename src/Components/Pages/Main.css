@@ -1,10 +1,52 @@
-.MaskListWrapper {
+body * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+.MainContents {
   width: 30%;
   background: #f4f4f4;
   float: left;
   height: 100vh;
-  overflow: hidden;
+  overflow: auto;
 }
+
+.Logo {
+  padding: 15px;
+  background-color: aliceblue;
+}
+
+.Search {
+  padding: 15px;
+  background-color: beige;
+}
+.Search input{
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+}
+.Search button {
+  padding: 10px;
+  font-size: 15px;
+  margin-left: 10px;
+}
+.Radius {
+  padding: 15px;
+  background-color: azure;
+}
+
+.MaskList {
+  padding: 15px;
+  background-color: rgb(211, 211, 211);
+}
+.store {
+  padding: 5px;
+  margin-bottom: 5px;
+  background-color: #f4f4f4;
+}
+
 .Test {
   width: 250px;
   height: 150px;
@@ -19,3 +61,4 @@
   width: 70%;
   height: 100vh;
 }
+

@@ -1,14 +1,18 @@
 import React from 'react';
 import './Main.css';
-import MaskList from '../Templates/Maps/MaskList';
 
-function MainContents() {
-  // const { state } = useContext(MapContext);
+function Search() {
   return (
-    <div className="MainContents">
-      <MaskList />
+    <div className="Search">
+      <input
+        name="localsearch"
+        placeholder="지역검색"
+        // onChange={onChange}
+        // value={LocalSearch}
+      />
+      <button type="submit">검색</button>
     </div>
   );
 }
 
-export default MainContents;
+export default Search;
