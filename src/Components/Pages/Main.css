@@ -1,0 +1,21 @@
+.MaskListWrapper {
+  width: 30%;
+  background: #f4f4f4;
+  float: left;
+  height: 100vh;
+  overflow: hidden;
+}
+.Test {
+  width: 250px;
+  height: 150px;
+  position: absolute;
+  background-color: rgb(255, 240, 209);
+  top: 0;
+  right: 0;
+  z-index: 9;
+  font-size: 12px;
+}
+#map {
+  width: 70%;
+  height: 100vh;
+}
