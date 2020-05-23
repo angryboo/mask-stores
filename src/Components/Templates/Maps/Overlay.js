@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import './Map.css';
+import '../../Pages/Main.css';
 import { MapContext } from '../../../ContextAPI/MapContext';
 
 function Overlay({ map }) {

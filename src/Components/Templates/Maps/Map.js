@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import './Map.css';
+import '../../Pages/Main.css';
 import { MapContext } from '../../../ContextAPI/MapContext';
 import Overlay from './Overlay';
 import Marker from './Marker';

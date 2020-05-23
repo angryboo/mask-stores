@@ -4,7 +4,7 @@
 import React, { useContext } from 'react';
 
 import { MapContext } from '../../../ContextAPI/MapContext';
-import './Test.css';
+import '../../Pages/Main.css';
 
 function Main() {
   const { state, getStores, getRange } = useContext(MapContext);
