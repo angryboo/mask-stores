@@ -1,12 +1,12 @@
 import React, { useEffect, useContext } from 'react';
-import './Map.css';
+import '../../Pages/Main.css';
 import { MapContext } from '../../../ContextAPI/MapContext';
 
 function Marker({ map }) {
   const { state } = useContext(MapContext);
   const { kakao } = window;
   useEffect(() => {
-    console.log(state.stores);
+    // console.log(state.stores);
     const markersPosition = state.stores.map(({ name, lat, lng }) => ({
       title: name,
       latlng: new kakao.maps.LatLng(lat, lng),
