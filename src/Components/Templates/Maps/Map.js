@@ -3,6 +3,7 @@ import '../../Pages/Main.css';
 import { MapContext } from '../../../ContextAPI/MapContext';
 import Overlay from './Overlay';
 import Marker from './Marker';
+import Level from './Level';
 
 function Map() {
   const { state, getStores, getLocation } = useContext(MapContext);
@@ -33,6 +34,7 @@ function Map() {
     <>
       <Marker map={_map.map} />
       <Overlay map={_map.map} />
+      <Level map={_map.map} />
       <div id="map" />
     </>
   );
