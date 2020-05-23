@@ -2,12 +2,12 @@
 
 /* eslint-disable react/button-has-type */
 import React, { useContext } from 'react';
-
 import { MapContext } from '../../../ContextAPI/MapContext';
 import './Test.css';
 
 function Main() {
   const { state, getStores, getRange } = useContext(MapContext);
+
   return (
     <div className="Test">
       테스트용 컴포넌트입니다.
@@ -42,7 +42,6 @@ function Main() {
       >
         범위 1000m 변경
       </button>
-      <button onClick={() => {}}>getNews</button>
     </div>
   );
 }

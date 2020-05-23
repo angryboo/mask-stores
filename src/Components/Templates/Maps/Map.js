@@ -23,6 +23,7 @@ function Map() {
       const { Ha, Ga } = map.getCenter();
       getLocation(Ha, Ga); // 위도, 경도 상태 변경
       getStores(Ha, Ga, state.radius); // 마스크 판매처 List 상태 변경
+      console.log(state.radius);
     });
     setState({ map });
   }, []);

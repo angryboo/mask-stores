@@ -12,6 +12,7 @@ function Marker({ map }) {
       latlng: new kakao.maps.LatLng(lat, lng),
     }));
 
+    const markers = [];
     const generateMaker = (mapObj) => {
       markersPosition.forEach((store) => {
         const marker = new kakao.maps.Marker({
@@ -19,13 +20,14 @@ function Marker({ map }) {
           position: store.latlng,
         });
         marker.setMap(mapObj);
+        markers.push(marker);
       });
     };
 
     generateMaker(map);
 
     return () => {
-      generateMaker(null);
+      markers.forEach((marker) => marker.setMap(null));
     };
   }, [state.stores]);
 
