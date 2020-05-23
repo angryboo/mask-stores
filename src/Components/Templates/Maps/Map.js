@@ -18,13 +18,14 @@ function Map() {
     };
     const map = new kakao.maps.Map(container, options);
 
-    // 맵 드래그 완료 시 3번째 인수로 전달 한 콜백 실행
-    kakao.maps.event.addListener(map, 'dragend', () => {
+    const callback = () => {
       const { Ha, Ga } = map.getCenter();
       getLocation(Ha, Ga); // 위도, 경도 상태 변경
       getStores(Ha, Ga, state.radius); // 마스크 판매처 List 상태 변경
-      console.log(state.radius);
-    });
+    };
+
+    // 맵 드래그 완료 시 3번째 인수로 전달 한 콜백 실행
+    kakao.maps.event.addListener(map, 'dragend', callback);
     setState({ map });
   }, []);
 
