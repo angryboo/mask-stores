@@ -8,6 +8,7 @@ const useMapFetch = () => {
     dispatch({ type: 'LOADING' });
     try {
       const storeData = await stores.getStores(lat, lon, rad);
+      console.log('getStore', lat, lon, rad);
       if (storeData.status === 200) {
         dispatch({
           type: 'STORE',
