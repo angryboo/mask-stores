@@ -24,13 +24,13 @@ function Marker({ map }) {
       let imageSrc = '';
 
       const plentyMarker =
-        'https://raw.githubusercontent.com/songseungeun/mask-stores/feature-content/src/img/marker.png';
+        'https://raw.githubusercontent.com/songseungeun/mask-stores/feature-content/src/img/marker-p.png';
       const someMarker =
-        'https://www.pinpng.com/pngs/m/236-2366474_map-marker-png-blue-map-marker-png-transparent.png';
+        'https://raw.githubusercontent.com/songseungeun/mask-stores/feature-content/src/img/marker-s.png';
       const fewMarker =
-        'https://www.pinpng.com/pngs/m/236-2366474_map-marker-png-blue-map-marker-png-transparent.png';
+        'https://raw.githubusercontent.com/songseungeun/mask-stores/feature-content/src/img/marker-f.png';
       const defaultMarker =
-        'https://www.pinpng.com/pngs/m/298-2987475_location-icon-gif-transparent-png-download-map-marker.png';
+        'https://raw.githubusercontent.com/songseungeun/mask-stores/feature-content/src/img/marker-d.png';
 
       markersPosition.forEach((store) => {
         switch (store.remain_stat) {
@@ -48,7 +48,7 @@ function Marker({ map }) {
         }
         // console.log(store.remain_stat + imageSrc);
 
-        const imageSize = new kakao.maps.Size(64, 69);
+        const imageSize = new kakao.maps.Size(60, 85);
 
         const imageOption = { offset: new kakao.maps.Point(27, 69) };
 
