@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useContext } from 'react';
 import '../../Pages/Main.css';
 import { MapContext } from '../../../ContextAPI/MapContext';
@@ -48,7 +49,7 @@ function Marker({ map }) {
     };
   }, [state.stores]);
 
-  return <div className="Marker" />;
+  return <></>;
 }
 
 export default Marker;
