@@ -1,14 +1,18 @@
+/* eslint-disable no-console */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, useContext } from 'react';
 import '../../Pages/Main.css';
 import { MapContext } from '../../../ContextAPI/MapContext';
 import Overlay from './Overlay';
 import Marker from './Marker';
 import Level from './Level';
+import MapEvent from './MapEvent';
 
 function Map() {
-  const { state, getStores, getLocation } = useContext(MapContext);
+  const { getLocation } = useContext(MapContext);
   const [_map, setState] = useState({});
   const { kakao } = window;
+  const mapEvent = kakao.maps.event;
 
   useEffect(() => {
     // 마운트 될 때 한번만 맵 생성
@@ -22,16 +26,16 @@ function Map() {
     const callback = () => {
       const { Ha, Ga } = map.getCenter();
       getLocation(Ha, Ga); // 위도, 경도 상태 변경
-      getStores(Ha, Ga, state.radius); // 마스크 판매처 List 상태 변경
     };
 
     // 맵 드래그 완료 시 3번째 인수로 전달 한 콜백 실행
-    kakao.maps.event.addListener(map, 'dragend', callback);
+    mapEvent.addListener(map, 'dragend', callback);
     setState({ map });
   }, []);
 
   return (
     <>
+      <MapEvent />
       <Marker map={_map.map} />
       <Overlay map={_map.map} />
       <Level map={_map.map} />

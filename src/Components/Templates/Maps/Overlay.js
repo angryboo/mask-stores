@@ -20,7 +20,14 @@ function Overlay({ map }) {
     return () => {
       circle.setMap(null);
     };
-  }, [map, state.latitude, state.longitude, state.radius]);
+  }, [
+    kakao.maps.Circle,
+    kakao.maps.LatLng,
+    map,
+    state.latitude,
+    state.longitude,
+    state.radius,
+  ]);
 
   return <div className="Overlay" />;
 }

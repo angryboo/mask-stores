@@ -4,6 +4,8 @@ import { stores } from '../API/StoresAPI';
 
 const useMapFetch = () => {
   const [state, dispatch] = useReducer(mapReducer, initialState);
+  console.log('1. 초기화', state);
+
   const getStores = async (lat, lon, rad) => {
     dispatch({ type: 'LOADING' });
     try {
@@ -52,7 +54,7 @@ const useMapFetch = () => {
   // 마운트 시점에 초기 위치 마스크 판매처 취득
   useEffect(() => {
     getStores(state.latitude, state.longitude, state.radius);
-  }, []);
+  }, [state.latitude, state.longitude, state.radius]);
 
   return [state, getStores, getLocation, getRange];
 };
