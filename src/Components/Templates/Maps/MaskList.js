@@ -30,15 +30,26 @@ function MaskList() {
   };
   // console.log(StoreList);
 
+  // const today = new Date();
+  // console.log(today);
+  // 2020/05/23 11:39:00
   return (
     <div className="MaskListWrapper">
+      <div className="SearchResult">
+        총 {StoreList.length}개의 약국이 검색되었습니다.
+      </div>
       <ul className="MaskList">
         {StoreList.length ? (
           StoreList.map(({ code, addr, name, remain_stat, stock_at }) => (
             <li key={code} className="store">
               <h4>{name}</h4>
-              <em>마스크 보유수량 : {StockValue(remain_stat)}</em>
-              <span className="date">{stock_at}</span>
+              <img
+                src="https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/face-with-medical-mask.png"
+                alt="mask"
+                className="mask-emoji"
+              />
+              <span className="stock">{StockValue(remain_stat)}</span>
+              <span className="date">입고시간 : {stock_at}</span>
               <span className="addr">{addr}</span>
             </li>
           ))
