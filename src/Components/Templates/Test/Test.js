@@ -5,10 +5,11 @@ import React, { useContext } from 'react';
 import { MapContext } from '../../../ContextAPI/MapContext';
 import { SearchContext } from '../../../ContextAPI/SearchContext';
 import '../../Pages/Main.css';
+import { token } from '../../../API/Token';
 
 function Main() {
   const { state, getRange } = useContext(MapContext);
-  const { searchState, getAddress, getLocation } = useContext(SearchContext);
+  const { searchState, getLocation } = useContext(SearchContext);
 
   const obj = {
     admCd: '1120011500',
@@ -35,6 +36,11 @@ function Main() {
     siNm: '서울특별시',
     udrtYn: '0',
     zipNo: '04782',
+  };
+
+  const tk = async () => {
+    const { data } = await token.getToken();
+    console.log(data.result.accessToken);
   };
 
   return (
@@ -77,17 +83,17 @@ function Main() {
       </button>
       <button
         onClick={() => {
-          getAddress(searchState.inputState);
-        }}
-      >
-        주소 가져오기
-      </button>
-      <button
-        onClick={() => {
           getLocation(obj);
         }}
       >
         좌표 검색
+      </button>
+      <button
+        onClick={() => {
+          console.log(tk());
+        }}
+      >
+        토큰취득
       </button>
     </div>
   );

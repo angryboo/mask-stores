@@ -47,7 +47,7 @@ const useSearchFetch = () => {
     try {
       const locationData = await coordinates.getCoordinates(obj);
       if (locationData.status === 200) {
-        console.log(locationData.data.result);
+        console.log(locationData);
         dispatch({
           type: 'LOCATION',
           selectLocation: {

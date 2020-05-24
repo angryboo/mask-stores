@@ -1,4 +1,10 @@
 import axios from 'axios';
+// import { token } from './Token';
+
+// const accessToken = async () => {
+//   const { data } = await token.getToken();
+//   return data.result.accessToken;
+// };
 
 const api = axios.create({
   baseURL: 'https://sgisapi.kostat.go.kr/OpenAPI3/transformation',
