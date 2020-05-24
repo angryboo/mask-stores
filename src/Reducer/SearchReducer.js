@@ -1,7 +1,7 @@
 export const initialState = {
   searchMode: false,
   selectLocation: { latitude: null, longitude: null },
-  searchStores: [],
+  searchAddress: [],
   error: {
     state: false,
     message: null,
@@ -17,14 +17,14 @@ export const searchReducer = (state, action) => {
         ...state,
         searchMode: initialState,
         selectLocation: { ...initialState.selectLocation },
-        searchStores: [...initialState.searchStores],
+        searchAddress: [...initialState.searchAddress],
         error: { ...initialState.error },
         loading: true,
       };
-    case 'STORE':
+    case 'ADDRESS':
       return {
         ...state,
-        searchStores: [...initialState.searchStores],
+        searchAddress: [...initialState.searchAddress],
       };
     case 'LOCATION':
       return {
