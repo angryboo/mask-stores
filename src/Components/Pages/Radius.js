@@ -2,7 +2,16 @@ import React from 'react';
 import './Main.css';
 
 function Radius() {
-  return <div className="Radius">검색할 반경을 클릭해주세요.</div>;
+  return (
+    <div className="Radius">
+      <span className="RadiusSelect">반경 선택</span>
+      <ul className="RadiusList">
+        <li>500m</li>
+        <li>700m</li>
+        <li>1km</li>
+      </ul>
+    </div>
+  );
 }
 
 export default Radius;

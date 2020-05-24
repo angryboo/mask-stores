@@ -71,8 +71,27 @@ function Marker({ map }) {
 
     generateMaker(map);
 
+    let iwContent = '';
+
+    const iwRemoveable = true;
+
+    markers.forEach((marker) => {
+      kakao.maps.event.addListener(marker, 'click', () => {
+        iwContent = marker.mc;
+
+        const infoWindow = new kakao.maps.InfoWindow({
+          content: iwContent,
+          removable: iwRemoveable,
+        });
+
+        infoWindow.open(map, marker);
+      });
+    });
+
     return () => {
-      markers.forEach((marker) => marker.setMap(null));
+      markers.forEach((marker) => {
+        marker.setMap(null);
+      });
     };
   }, [state.stores]);
 

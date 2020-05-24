@@ -5,7 +5,7 @@ function Logo() {
   return (
     <div className="Logo">
       <h1>슼세권</h1>
-      Mask Tracker
+      <h2>Mask Tracker</h2>
     </div>
   );
 }
