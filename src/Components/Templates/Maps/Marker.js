@@ -30,7 +30,7 @@ function Marker({ map }) {
       const fewMarker =
         'https://raw.githubusercontent.com/songseungeun/mask-stores/feature-content/src/img/marker-f.png';
       const defaultMarker =
-        'https://raw.githubusercontent.com/songseungeun/mask-stores/feature-content/src/img/marker-d.png';
+        'https://raw.githubusercontent.com/songseungeun/mask-stores/feature-content/src/img/marker-n.png';
 
       markersPosition.forEach((store) => {
         switch (store.remain_stat) {
