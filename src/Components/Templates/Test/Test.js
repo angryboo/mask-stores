@@ -50,7 +50,7 @@ function Main() {
       </button>
       <button
         onClick={() => {
-          getAddress('성수역');
+          getAddress(searchState.inputState);
         }}
       >
         주소 가져오기
