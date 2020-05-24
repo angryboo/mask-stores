@@ -29,7 +29,7 @@ function Overlay({ map }) {
     state.radius,
   ]);
 
-  return <div className="Overlay" />;
+  return <></>;
 }
 
 export default Overlay;
