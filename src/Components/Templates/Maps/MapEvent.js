@@ -1,15 +1,17 @@
-// import React, { useEffect, useContext } from 'react';
-// import './Map.css';
-// import { MapContext } from '../../../ContextAPI/MapContext';
+import React, { useEffect, useContext } from 'react';
+import '../../Pages/Main.css';
+import { MapContext } from '../../../ContextAPI/MapContext';
 
-// function Event({ map }) {
-//   const { state } = useContext(MapContext);
-//   const { kakao } = window;
-//   useEffect(() => {
-//     return () => {};
-//   }, []);
+function MapEvent() {
+  const { state, getStores } = useContext(MapContext);
 
-//   return <div className="Event" />;
-// }
+  useEffect(() => {
+    console.log(111);
+    getStores(state.latitude, state.longitude, state.radius);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.latitude, state.longitude, state.radius]);
 
-// export default Event;
+  return <></>;
+}
+
+export default MapEvent;
