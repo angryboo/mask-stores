@@ -11,8 +11,8 @@ const useSearchFetch = () => {
       const addressData = await address.getAddress(keyword);
       if (addressData.status === 200) {
         dispatch({
-          type: 'STORE',
-          searchAddress: addressData.data.searchAddress,
+          type: 'ADDRESS',
+          searchAddress: addressData.data.results.juso,
         });
       } else {
         dispatch({
@@ -34,7 +34,14 @@ const useSearchFetch = () => {
     }
   };
 
-  return [state, getAddress];
+  const changeInput = (keyword) => {
+    dispatch({
+      type: 'INPUT',
+      inputState: keyword,
+    });
+  };
+
+  return [state, getAddress, changeInput];
 };
 
 export default useSearchFetch;

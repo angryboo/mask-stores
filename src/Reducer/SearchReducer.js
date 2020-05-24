@@ -1,4 +1,5 @@
 export const initialState = {
+  inputState: '',
   searchMode: false,
   selectLocation: { latitude: null, longitude: null },
   searchAddress: [],
@@ -15,16 +16,22 @@ export const searchReducer = (state, action) => {
     case 'LOADING':
       return {
         ...state,
+        inputState: initialState.inputState,
         searchMode: initialState,
         selectLocation: { ...initialState.selectLocation },
         searchAddress: [...initialState.searchAddress],
         error: { ...initialState.error },
         loading: true,
       };
+    case 'INPUT':
+      return {
+        ...state,
+        inputState: action.inputState,
+      };
     case 'ADDRESS':
       return {
         ...state,
-        searchAddress: [...initialState.searchAddress],
+        searchAddress: [...action.searchAddress],
       };
     case 'LOCATION':
       return {
