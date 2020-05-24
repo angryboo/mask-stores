@@ -17,7 +17,7 @@ export const searchReducer = (state, action) => {
       return {
         ...state,
         inputState: initialState.inputState,
-        searchMode: initialState,
+        searchMode: initialState.searchMode,
         selectLocation: { ...initialState.selectLocation },
         searchAddress: [...initialState.searchAddress],
         error: { ...initialState.error },
