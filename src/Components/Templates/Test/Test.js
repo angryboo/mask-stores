@@ -3,10 +3,12 @@
 /* eslint-disable react/button-has-type */
 import React, { useContext } from 'react';
 import { MapContext } from '../../../ContextAPI/MapContext';
+import { SearchContext } from '../../../ContextAPI/SearchContext';
 import '../../Pages/Main.css';
 
 function Main() {
   const { state, getRange } = useContext(MapContext);
+  const { searchState, getAddress } = useContext(SearchContext);
 
   return (
     <div className="Test">
@@ -38,6 +40,20 @@ function Main() {
         }}
       >
         범위 1000m 변경
+      </button>
+      <button
+        onClick={() => {
+          console.log(searchState);
+        }}
+      >
+        현재 searchState 보기
+      </button>
+      <button
+        onClick={() => {
+          getAddress('성수역');
+        }}
+      >
+        주소 가져오기
       </button>
     </div>
   );

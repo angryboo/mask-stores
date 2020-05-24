@@ -21,8 +21,6 @@ export const mapReducer = (state, action) => {
         loading: true,
       };
     case 'MOVE':
-      console.log('MOVE');
-      console.log('Reducer', action.latitude, action.longitude);
       return {
         ...state,
         latitude: action.latitude,

@@ -4,13 +4,11 @@ import { stores } from '../API/StoresAPI';
 
 const useMapFetch = () => {
   const [state, dispatch] = useReducer(mapReducer, initialState);
-  console.log('1. 초기화', state);
 
   const getStores = async (lat, lon, rad) => {
     dispatch({ type: 'LOADING' });
     try {
       const storeData = await stores.getStores(lat, lon, rad);
-      console.log('getStore', lat, lon, rad);
       if (storeData.status === 200) {
         dispatch({
           type: 'STORE',
